@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Add Employee</h2>
-    <form action="#" th:action="@{/add}" th:object="${user}" method="post">
+    <form action="#" th:action="@{/add}" th:object="${user}" method="post" class="container mt-5">
         <div>
             <label for="employeeEmail">Employee Email: </label>
             <input type="email" th:field="*{employeeEmail}" id="employeeEmail" />
@@ -25,7 +25,7 @@
             <input type="text" th:field="*{employeeUsername}" id="employeeUsername" />
         </div>
         <div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="button-link">Submit</button>
         </div>
     </form>
     <a href="/all" class="btn btn-secondary">Back to List</a>
