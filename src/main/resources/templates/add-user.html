@@ -7,30 +7,27 @@
 </head>
 <body>
     <h2>Add Employee</h2>
-    <form action="#" th:action="@{/add}" th:object="${user}" method="post" class="form">
-        <div class="form-group">
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" th:field="*{firstName}" class="form-control"/>
+    <form action="#" th:action="@{/add}" th:object="${user}" method="post">
+        <div>
+            <label for="employeeEmail">Employee Email: </label>
+            <input type="email" th:field="*{employeeEmail}" id="employeeEmail" />
         </div>
-        
-        <div class="form-group">
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" th:field="*{lastName}" class="form-control"/>
+        <div>
+            <label for="firstName">First Name: </label>
+            <input type="text" th:field="*{firstName}" id="firstName" />
         </div>
-        
-        <div class="form-group">
-            <label for="employeeEmail">Email:</label>
-            <input type="email" id="employeeEmail" th:field="*{email}" class="form-control"/>
+        <div>
+            <label for="lastName">Last Name: </label>
+            <input type="text" th:field="*{lastName}" id="lastName" />
         </div>
-
-        <div class="form-group">
-            <label for="employeeUsername">Username:</label>
-            <input type="text" id="employeeUsername" th:field="*{employeeUsername}" class="form-control"/>
+        <div>
+            <label for="employeeUsername">Username: </label>
+            <input type="text" th:field="*{employeeUsername}" id="employeeUsername" />
         </div>
-        
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
     </form>
-    <a href="/all" class="btn btn-secondary mt-3">Back to List</a>
-    <div th:insert="~{fragments/footer :: common-footer}"></div>
+    <a href="/all" class="btn btn-secondary">Back to List</a>
 </body>
 </html>

@@ -39,7 +39,6 @@
                     <td th:text="${user.employeeUsername}">Username</td>
                     <td th:text="${user.createdAt}">Created On</td>
                     <td>
-                        <!-- Update to match your controller's URL path and parameter names -->
                         <a th:href="@{/edit/{employeeId}(employeeId=${user.employeeId})}" class="button-link">Update</a>
                         <a th:href="@{/delete/{employeeId}(employeeId=${user.employeeId})}" class="button-link">Delete</a>
                     </td>

@@ -61,11 +61,23 @@ public class UserController {
     }
 
     @PostMapping("/update")
-    public String updateUser(@ModelAttribute("user") User user) {
-        logger.debug("Updating user: {}", user);
-        userRepository.save(user);
+    public String updateUser(@ModelAttribute("user") User updatedUser) {
+        logger.debug("Updating user: {}", updatedUser);
+        // Fetch the existing user from the database
+        User existingUser = userRepository.findById(updatedUser.getEmployeeId())
+                .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + updatedUser.getEmployeeId()));
+        
+        // Update the existing user with the new values, but keep the original created_at value
+        existingUser.setFirstName(updatedUser.getFirstName());
+        existingUser.setLastName(updatedUser.getLastName());
+        existingUser.setEmployeeEmail(updatedUser.getEmployeeEmail());
+        existingUser.setEmployeeUsername(updatedUser.getEmployeeUsername());
+        
+        // Save the updated existing user back to the database
+        userRepository.save(existingUser);
         return "redirect:/all"; // Redirect back to the listing after updating.
     }
+
 
     @GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") long id) {

@@ -37,8 +37,8 @@ public class User {
         createdAt = LocalDateTime.now();
     }
 
-    // Getters and setters
 
+    // Getters and setters
     public Long getEmployeeId() {
         return employeeId;
     }
