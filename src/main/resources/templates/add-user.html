@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Employee</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <h2>Add Employee</h2>
+    <form action="#" th:action="@{/add}" th:object="${user}" method="post" class="form">
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" th:field="*{firstName}" class="form-control"/>
+        </div>
+        
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" th:field="*{lastName}" class="form-control"/>
+        </div>
+        
+        <div class="form-group">
+            <label for="employeeEmail">Email:</label>
+            <input type="email" id="employeeEmail" th:field="*{email}" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="employeeUsername">Username:</label>
+            <input type="text" id="employeeUsername" th:field="*{employeeUsername}" class="form-control"/>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <a href="/all" class="btn btn-secondary mt-3">Back to List</a>
+    <div th:insert="~{fragments/footer :: common-footer}"></div>
+</body>
+</html>

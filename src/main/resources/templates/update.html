@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Employee</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <h2>Update Employee</h2>
+    <form action="#" th:action="@{/update}" th:object="${user}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" th:field="*{firstName}" id="firstName" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" th:field="*{lastName}" id="lastName" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="employeeEmail">Email:</label>
+            <input type="email" th:field="*{email}" id="employeeEmail" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="employeeUsername">Username:</label>
+            <input type="text" th:field="*{employeeUsername}" id="employeeUsername" class="form-control"/>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Update Employee</button>
+        </div>
+    </form>
+    <a href="/all" class="btn btn-secondary">Back to List</a>
+    <div th:insert="~{fragments/footer :: common-footer}"></div>
+</body>
+</html>

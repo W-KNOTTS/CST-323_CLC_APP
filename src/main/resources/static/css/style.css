@@ -1,0 +1,79 @@
+:root {
+    --bs-dark: #343a40;
+    --bs-purple: #6f42c1; /* GCU's purple */
+    --bs-hover: #5d3db7; /* A slightly darker purple for hover effects */
+    --bs-text-color: #ffffff; /* White text color */
+    --bs-hover-bg: rgb(138, 21, 255); /* Light gray background on hover */
+}
+
+body {
+    background-color: var(--bs-dark);
+    color: var(--bs-text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+
+.navbar {
+    background-color: var(--bs-purple);
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--bs-purple);
+    color: var(--bs-text-color);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: var(--bs-hover);
+    color: #d9534f;
+}
+
+.footer {
+    color: var(--bs-text-color);
+    text-align: center;
+    padding: 30px 0;
+    background-color: var(--bs-dark);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.table {
+    color: var(--bs-text-color);
+    margin-top: 20px;
+    width: 100%;
+}
+
+.table-bordered {
+    border: 2px solid var(--bs-purple);
+}
+
+.table thead th {
+    background-color: var(--bs-purple);
+    border-bottom: 2px solid var(--bs-hover);
+}
+
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid var(--bs-hover-bg);
+}
+
+.table-hover tbody tr:hover {
+    background-color: var(--bs-hover-bg);
+}
